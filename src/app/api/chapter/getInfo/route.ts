@@ -33,11 +33,6 @@ export async function POST(req: Request, res: Response) {
       );
     }
     const videoId = await searchYoutube(chapter.youtubeSearchQuery);
-    if (!videoId) {
-      // Handle the null case, maybe return an error response
-      return NextResponse.json({ error: "No video found" }, { status: 404 });
-    }
-    // Now videoId is definitely a string
     let transcript = await getTranscript(videoId);
     let maxLength = 500;
     transcript = transcript.split(" ").slice(0, maxLength).join(" ");

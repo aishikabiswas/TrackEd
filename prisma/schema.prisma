@@ -24,7 +24,7 @@ model Account {
   user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
-  @@index([userId], name: "userId_account") // Unique index name
+  @@index([userId], map: "userId_account")
 }
 
 model Session {
@@ -34,7 +34,7 @@ model Session {
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@index([userId], name: "userId_session") // Unique index name
+  @@index([userId], map: "userId_session")
 }
 
 model User {
@@ -44,9 +44,8 @@ model User {
   emailVerified DateTime?
   image         String?
   credits       Int       @default(10)
-
-  accounts Account[]
-  sessions Session[]
+  accounts      Account[]
+  sessions      Session[]
 }
 
 model Course {
@@ -57,20 +56,18 @@ model Course {
 }
 
 model Unit {
-  id       String @id @default(cuid())
+  id       String    @id @default(cuid())
   courseId String
-
   name     String
-  course   Course    @relation(fields: [courseId], references: [id])
   chapters Chapter[]
+  course   Course    @relation(fields: [courseId], references: [id])
 
-  @@index([courseId], name: "courseId")
+  @@index([courseId], map: "courseId")
 }
 
 model Chapter {
-  id     String @id @default(cuid())
-  unitId String
-
+  id                 String     @id @default(cuid())
+  unitId             String
   name               String
   youtubeSearchQuery String
   videoId            String?
@@ -78,26 +75,25 @@ model Chapter {
   unit               Unit       @relation(fields: [unitId], references: [id])
   questions          Question[]
 
-  @@index([unitId], name: "unitId")
+  @@index([unitId], map: "unitId")
 }
 
 model Question {
-  id        String @id @default(cuid())
+  id        String  @id @default(cuid())
   chapterId String
+  question  String
+  answer    String
+  options   String
+  chapter   Chapter @relation(fields: [chapterId], references: [id])
 
-  question String
-  answer   String
-  options  String
-  chapter  Chapter @relation(fields: [chapterId], references: [id])
-
-  @@index([chapterId], name: "chapterId")
+  @@index([chapterId], map: "chapterId")
 }
 
 model UserSubscription {
   id                     String    @id @default(cuid())
   userId                 String    @unique
-  stripeCustomerId       String    @unique @map(name: "stripe_customer_id")
-  stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
-  stripePriceId          String?   @map(name: "stripe_price_id")
-  stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
+  stripeCustomerId       String    @unique @map("stripe_customer_id")
+  stripeSubscriptionId   String?   @unique @map("stripe_subscription_id")
+  stripePriceId          String?   @map("stripe_price_id")
+  stripeCurrentPeriodEnd DateTime? @map("stripe_current_period_end")
 }

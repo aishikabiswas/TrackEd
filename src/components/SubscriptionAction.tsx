@@ -32,7 +32,7 @@ const SubscriptionAction = (props: Props) => {
       <Button
         disabled={loading}
         onClick={handleSubscribe}
-        className="mt-3 font-bold text-white transition bg-gradient-to-tr from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600"
+        className="mt-3 font-bold text-white transition bg-gradient-to-tr from-pink-400 to-violet-500 hover:from-pink-500 hover:to-violet-600"
       >
         Upgrade
         <Zap className="fill-white ml-2" />

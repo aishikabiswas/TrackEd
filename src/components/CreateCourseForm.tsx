@@ -58,17 +58,10 @@ const CreateCourseForm = ({ isPro }: Props) => {
         router.push(`/create/${course_id}`);
       },
       onError: (error) => {
-        console.error("Form submission error:", error);
-        let errorMessage = "Something went wrong";
-        
-        if (axios.isAxiosError(error) && error.response) {
-          errorMessage = error.response.data?.error || error.response.data || errorMessage;
-          console.log("Server error details:", error.response.data);
-        }
-        
+        console.error(error);
         toast({
           title: "Error",
-          description: errorMessage,
+          description: "Something went wrong",
           variant: "destructive",
         });
       },
