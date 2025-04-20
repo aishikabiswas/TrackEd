@@ -12,7 +12,7 @@ const Navbar = async (props: Props) => {
   return (
     <nav className="fixed inset-x-0 top-0 bg-white dark:bg-gray-950 z-[10] h-fit border-b border-zinc-300 py-2">
       <div className="flex items-center justify-center h-full gap-2 px-8 mx-auto sm:justify-between max-w-7xl">
-      <Link href="/gallery" className="inline-block">
+      <Link href="/" className="inline-block">
   <div className="
     p-2 
     rounded-lg
