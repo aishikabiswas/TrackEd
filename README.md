@@ -44,7 +44,7 @@ npm install
 
 npm install @google/generative-ai
 
-# setup Environment Variables
+# Setup Environment Variables
 DATABASE_URL=
 
 NEXTAUTH_SECRET=
