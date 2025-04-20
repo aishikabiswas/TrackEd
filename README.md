@@ -1,4 +1,4 @@
-# 📚 Learning App
+# 📚 TrackEd: Your personal Learning Webapp
 
 A modern, full-stack learning platform built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**. This app integrates with several powerful APIs and services including **Neon DB (PostgreSQL)**, **NextAuth.js**, **Google OAuth**, **Stripe**, **YouTube API**, **Gemini AI**, and **Unsplash** to deliver a rich, interactive learning experience.
 
@@ -47,7 +47,6 @@ GEMINI_API_KEY=
 UNSPLASH_ACCESS_KEY=
 YOUTUBE_API_KEY=
 STRIPE_API_KEY=
-NEXTAUTH_URL="http://localhost:3000"
 
 # running the project
 npm run dev
