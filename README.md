@@ -12,13 +12,13 @@ A modern, full-stack learning platform built with **Next.js (App Router)**, **Ty
 - **Payments**: [Stripe](https://stripe.com/)
 - **Media & AI APIs**:
 
-GEMINI_API_KEY=
+GEMINI_API_KEY
 
-UNSPLASH_ACCESS_KEY=
+UNSPLASH_ACCESS_KEY
 
-YOUTUBE_API_KEY=
+YOUTUBE_API_KEY
 
-STRIPE_API_KEY=
+STRIPE_API_KEY
 
 ## 🧠 Features
 
