@@ -11,9 +11,13 @@ A modern, full-stack learning platform built with **Next.js (App Router)**, **Ty
 - **Authentication**: [NextAuth.js](https://next-auth.js.org/) with Google OAuth
 - **Payments**: [Stripe](https://stripe.com/)
 - **Media & AI APIs**:
+
 GEMINI_API_KEY=
+
 UNSPLASH_ACCESS_KEY=
+
 YOUTUBE_API_KEY=
+
 STRIPE_API_KEY=
 
 ## 🧠 Features
@@ -32,20 +36,29 @@ STRIPE_API_KEY=
 
 ``'`bash
 git clone https://github.com/yourusername/learning-app.git
+
 cd learning-app
 
 # Install Dependencies
 npm install
+
 npm install @google/generative-ai
 
 # setup Environment Variables
 DATABASE_URL=
+
 NEXTAUTH_SECRET=
+
 GOOGLE_CLIENT_ID=
+
 GOOGLE_CLIENT_SECRET=
+
 GEMINI_API_KEY=
+
 UNSPLASH_ACCESS_KEY=
+
 YOUTUBE_API_KEY=
+
 STRIPE_API_KEY=
 
 # running the project
